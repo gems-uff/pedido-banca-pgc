@@ -1,0 +1,15 @@
+{
+  "membros": "membros.json",
+  "aluno": "Fulano de Tal",
+  "matricula": "M000.000.000",
+  "orientadores": ["Ana Exemplo da Silva"],
+  "linha": "Engenharia de Sistemas e Informação",
+  "titulo": "Um Título de Dissertação de Exemplo",
+  "formato": "presencial",
+  "justificativa": "",
+  "participantes_online": [],
+  "banca": ["orientadora", "interno1", "externo1"],
+  "suplente_interno": "interno2",
+  "suplente_externo": "externo2",
+  "data_pedido": "2026-10-19"
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.egg-info/
+.venv/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+# dados pessoais e PDFs gerados nunca entram no repositório
+*.pdf
+!tests/dados/*.pdf
+membros.json
+!src/pedido_banca/modelos/membros.json

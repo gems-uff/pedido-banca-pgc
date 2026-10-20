@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pedido-banca-pgc"
+dynamic = ["version"]
+description = "Preenche o pedido de banca de mestrado do PGC/IC-UFF a partir de um JSON"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Leonardo Murta", email = "leomurta@ic.uff.br" }]
+requires-python = ">=3.10"
+dependencies = ["pymupdf>=1.24,<2"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Natural Language :: Portuguese (Brazilian)",
+  "Topic :: Office/Business",
+]
+
+[project.urls]
+Repository = "https://github.com/gems-uff/pedido-banca-pgc"
+
+[project.scripts]
+pedido-banca = "pedido_banca.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6"]
+
+[tool.hatch.version]
+path = "src/pedido_banca/__init__.py"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["rede: precisa baixar o formulário do site do PGC"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pedido_banca"]

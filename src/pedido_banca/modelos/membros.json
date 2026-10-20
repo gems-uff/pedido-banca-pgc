@@ -1,0 +1,7 @@
+{
+  "orientadora": {"nome": "Ana Exemplo da Silva", "instituicao": "UFF", "email": "ana@exemplo.br", "interno": true},
+  "interno1":    {"nome": "Bruno Fictício Souza", "instituicao": "UFF", "email": "bruno@exemplo.br", "interno": true},
+  "interno2":    {"nome": "Carla Modelo Lima", "instituicao": "UFF", "email": "carla@exemplo.br", "interno": true},
+  "externo1":    {"nome": "Daniel Teste Rocha", "instituicao": "UFRJ", "email": "daniel@exemplo.br", "cpf": "111.444.777-35"},
+  "externo2":    {"nome": "Elisa Amostra Costa", "instituicao": "UNIRIO", "email": "elisa@exemplo.br", "cpf": "222.555.888-46"}
+}
