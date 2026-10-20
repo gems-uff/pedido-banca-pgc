@@ -12,3 +12,4 @@ htmlcov/
 !tests/dados/*.pdf
 membros.json
 !src/pedido_banca/modelos/membros.json
+!exemplo/*.pdf

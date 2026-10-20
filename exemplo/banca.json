@@ -1,0 +1,22 @@
+{
+  "aluno": "Fulano de Tal",
+  "matricula": "M000.000.000",
+  "orientadores": ["Ana Exemplo da Silva", "Gustavo Coorientador Alves"],
+  "linha": "Engenharia de Sistemas e Informação",
+  "titulo": [
+    "Um Título de Dissertação Bem Longo, que Precisa Ser Quebrado",
+    "em Duas Linhas para Caber no Formulário"
+  ],
+  "formato": "hibrido",
+  "justificativa": "Membro externo residente em outro estado",
+  "participantes_online": ["Daniel Teste Rocha"],
+  "banca": [
+    {"nome": "Ana Exemplo da Silva", "instituicao": "UFF", "interno": true},
+    {"nome": "Gustavo Coorientador Alves", "instituicao": "Empresa Fictícia", "email": "gustavo@exemplo.br", "cpf": "333.666.999-57"},
+    {"nome": "Bruno Fictício Souza", "instituicao": "UFF", "interno": true},
+    {"nome": "Daniel Teste Rocha", "instituicao": "UFRGS", "email": "daniel@exemplo.br", "cpf": "111.444.777-35", "passagem": true, "diarias": "2 diárias"}
+  ],
+  "suplente_interno": {"nome": "Carla Modelo Lima", "instituicao": "UFF", "interno": true},
+  "suplente_externo": {"nome": "Elisa Amostra Costa", "instituicao": "UNIRIO", "email": "elisa@exemplo.br", "cpf": "222.555.888-46"},
+  "data_pedido": "2026-10-19"
+}

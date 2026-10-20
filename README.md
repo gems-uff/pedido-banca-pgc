@@ -7,9 +7,31 @@ Preenche o formulário de **pedido de banca de defesa de dissertação de mestra
 O resultado é o PDF oficial preenchido, pronto para o orientador assinar.
 
 A ideia é descrever a banca uma vez em `banca.json` e regerar o PDF sempre que algo mudar
-(data, formato, um membro). Os dados dos colegas que costumam participar de bancas (nome
-completo, instituição, e-mail, CPF) ficam num cadastro, `membros.json`, reaproveitado entre
-pedidos.
+(data, formato, um membro). Os membros podem ser escritos por extenso no próprio
+`banca.json` ou vir de um cadastro, `membros.json`, reaproveitado entre pedidos.
+
+## Demonstração
+
+A pasta [`exemplo/`](exemplo) tem um pedido completo com dados fictícios:
+
+| Arquivo | Conteúdo |
+|---|---|
+| [`banca.json`](exemplo/banca.json) | pedido híbrido, com coorientador, título em duas linhas e um membro externo com passagem |
+| [`Defesa_de_Dissertacao_de_Mestrado-v8.pdf`](exemplo/Defesa_de_Dissertacao_de_Mestrado-v8.pdf) | formulário em branco do PGC |
+| [`Pedido_Banca_exemplo.pdf`](exemplo/Pedido_Banca_exemplo.pdf) | resultado esperado |
+
+Para gerar o PDF você mesmo (requer [uv](https://docs.astral.sh/uv/)):
+
+```bash
+git clone https://github.com/gems-uff/pedido-banca-pgc
+cd pedido-banca-pgc
+uv run pedido-banca preencher exemplo/banca.json \
+    -f exemplo/Defesa_de_Dissertacao_de_Mestrado-v8.pdf -o meu_teste.pdf
+open meu_teste.pdf      # macOS; no Linux, xdg-open meu_teste.pdf
+```
+
+Depois, mude algo em `exemplo/banca.json` (o formato para `presencial`, um nome, um CPF
+inválido...) e rode de novo para ver o efeito ou a mensagem de erro.
 
 ## Instalação
 
@@ -112,7 +134,15 @@ uv run pytest
 uv run ruff check . && uv run ruff format --check .
 ```
 
-Os testes usam uma cópia do formulário em branco (`tests/dados/`) e dados fictícios. Ideias e
+Os testes usam uma cópia do formulário em branco (`tests/dados/`) e dados fictícios. Se uma
+mudança alterar o PDF gerado, regere o exemplo (um teste avisa quando ele fica desatualizado):
+
+```bash
+uv run pedido-banca preencher exemplo/banca.json \
+    -f exemplo/Defesa_de_Dissertacao_de_Mestrado-v8.pdf -o exemplo/Pedido_Banca_exemplo.pdf
+```
+
+ Ideias e
 correções são bem-vindas via issues e pull requests. Um próximo passo natural é dar suporte
 aos formulários de exame de qualificação e de defesa de tese.
 
